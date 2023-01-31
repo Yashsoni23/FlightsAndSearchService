@@ -29,8 +29,9 @@ class CityRepository {
         }
     }
 
-    async updateCity({cityid,data}) {
+    async updateCity(cityid,data) {
         try {
+            console.log(cityid)
             const city = await City.update(data,{
                 where:{
                     id:cityid
