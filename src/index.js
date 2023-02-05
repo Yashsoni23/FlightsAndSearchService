@@ -26,7 +26,7 @@ const setUpAndStartServer = async () => {
             where:{id:15},
             include:[{model:Airport}]
         })
-       await city.getAirports();
+    //    await city.getAirports();
         // const Cite = await city.getAirport();
     })
 
