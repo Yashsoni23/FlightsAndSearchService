@@ -49,10 +49,10 @@ class CityRepository {
             // The below method alos works but will returning updated data
 
 
-            // const city = await City.findByPk(cityid);
-            // city.name = data.name;
-            // await city.save()
-            // return city;
+            const city = await City.findByPk(cityid);
+            city.name = data.name;
+            await city.save()
+            return city;
 
         } catch (error) {
             console.log("something went wrong in this repository layer");

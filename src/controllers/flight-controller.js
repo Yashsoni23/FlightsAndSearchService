@@ -1,4 +1,4 @@
-const {FlightService, FlightService} = require("../services/index");
+const {FlightService} = require("../services/index");
 
 const flightService = new FlightService();
 
@@ -21,7 +21,25 @@ const create = async (req,res)=>{
         })
     }
 }
-
+const getAll = async (req,res)=>{
+    try {
+        const responce = await flightService.getAllFlightData(req.query);
+        return res.status(201).json({
+            data: responce,
+            sucess:true,
+            err:{},
+            message:"Successfully fathced a flights"
+        })
+    } catch (error) {
+        return res.json({
+            data:{},
+            sucess:false,
+            message:"Not able to fatch the flights",
+            err:error
+        })
+    }
+}
 module.exports = {
-    create
+    create,
+    getAll
 }
