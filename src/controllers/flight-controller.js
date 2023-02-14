@@ -15,7 +15,6 @@ const create = async (req, res) => {
             departureTime:departureTime,
             price:price
         }
-        console.log(flightRequestData);
 
         const flight = await flightService.createFlight(flightRequestData);
         return res.status(SuccessCodes.CREATED).json({
